@@ -1,0 +1,24 @@
+* {
+    font-family: Sarabun, Arial, sans-serif;
+}
+
+a {
+    color: #ff6314;
+}
+
+body {
+    font-size: 1rem;
+    margin: 30px;
+    background-color: #161618ff;
+    color: #ebebec;
+}
+
+textarea {
+    width: 90%;
+    height: 16em;
+    resize: vertical;
+}
+
+.section {
+    margin-bottom: 40px;
+}
