@@ -1,0 +1,54 @@
+body {
+    font-family: "Roboto Mono", Sarabun, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+
+}
+
+.title *{
+	font-family: "Roboto Mono";
+	color: #ebebec;
+	text-decoration: none;
+}
+
+nav * {
+	font-family: "Roboto Mono";
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-wrap: nowrap;
+}
+
+a {
+    color: #ff6314;
+}
+
+body {
+    font-size: 1rem;
+    margin: 30px;
+    background-color: #161618ff;
+    color: #ebebec;
+}
+
+textarea {
+    width: 90%;
+    height: 16em;
+    resize: vertical;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.main-section {
+	display: flex;
+	justify-content: space-between;
+	gap: 64px;
+}
+
+h2 {
+	margin: 0;
+	font-size: 2rem;
+}
