@@ -1,9 +1,10 @@
 /* Root & Global Resets */
 :root {
-	color-scheme: dark;
+	color-scheme: light dark;
 	--light-color: #ebebec;
 	--dark-color: #161618;
 	--accent-color: #ff4314;
+	--spacing-outer: clamp(1rem, 5vw, 2rem);
 }
 
 * {
@@ -15,122 +16,217 @@
 body {
 	font-family: "Roboto Mono", Sarabun, Arial, sans-serif;
 	font-size: 1rem;
-	margin: 32px;
+	padding: var(--spacing-outer);
 	background-color: light-dark(var(--light-color), var(--dark-color));
 	color: light-dark(var(--dark-color), var(--light-color));
+	line-height: 1.5;
 }
 
 /* Global Element Styles */
-h2 {
-	margin-top: 0;
-	margin-bottom: 1em;
-	font-size: 2rem;
+h1,
+h2,
+h3 {
 	font-weight: 400;
 	line-height: 1.2em;
 }
 
+h2 {
+	margin-bottom: 1em;
+	font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
 h3 {
 	font-size: 1.5rem;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 
 p {
-	/*width: clamp(45ch, 50%, 75ch);*/
-	text-wrap: wrap;
-	width: auto;
+	max-width: 65ch; /* Optimum reading length */
 	margin-bottom: 1em;
 }
 
 a {
 	color: var(--accent-color);
+	text-decoration: none;
 }
 
 a:hover {
+	text-decoration: underline;
 	opacity: 0.8;
 }
 
 img {
-	font-style: italic;
 	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+	/*height: auto;*/
+	/*aspect-ratio: 16 / 9;*/
+	display: block;
+	object-fit: cover;
 }
 
-/* Layout Containers */
+/* Base Layout (Mobile Default) */
 .main-section {
 	display: flex;
-	justify-content: space-between;
-	gap: 64px;
-	/*flex-wrap: wrap;*/
+	flex-direction: column;
+	gap: 3rem;
 }
 
 .title {
-	margin-top: 0;
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
-.title * {
+.title a {
 	font-family: "Space Grotesk", "Roboto Mono", sans-serif;
 	font-size: 1.2em;
-	margin-top: 0;
-	color: light-dark(var(--dark-color), var(--light-color));
-	text-decoration: none;
+	font-weight: bold;
+	color: inherit;
+	display: inline-block;
 }
 
-.left-column {
-	display: flex;
-	flex-direction: column;
-	position: sticky;
-	top: 32px;
-	height: calc(100vh - 64px);
-	/*justify-content: flex-start;
-	height: max-content;*/
+.logo {
+    display: block;
+    margin-top: 0.5rem;
+    width: 160px;
+    height: auto;
+    /* This makes the SVG take the color of the parent text */
+    fill: currentColor;
 }
 
+.status {
+	margin-bottom: 2rem;
+	opacity: 0.7;
+	font-size: 0.9em;
+}
+
+/* Navigation Styling */
 .nav-bar {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	flex: 1;
+	gap: 2rem;
+	margin-bottom: 2rem;
 }
 
-nav * {
-	text-decoration: none;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	text-wrap: nowrap;
+nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 .about {
 	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 16px;
-	margin-bottom: 1em;
-	/*flex-wrap: wrap;*/
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+	/*margin-bottom: 4rem;*/
+	/*border-bottom: 1px solid var(--dark-color);*/
+	/*padding-bottom: 2rem;*/
 }
 
+/* Project Cards */
 .project-card {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	align-items: flex-start;
-	margin-bottom: 3em;
-}
-
-.reverse {
-	flex-direction: row-reverse;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 4rem;
 }
 
 .project-image {
-	display: block;
+	min-width: 0;
 	width: 100%;
-	height: auto;
-	flex: 4 1 400px;
+	aspect-ratio: 16 / 9;
 	object-fit: cover;
+	background-color: #333; /* Placeholder for loading */
 }
 
-.project-description {
-	flex: 1 1 300px;
+.flex {
+	display: flex;
+	/*width: 100%;*/
+}
+
+.flex img {
+	flex: 1;
+    width: 100%;
+    object-fit: cover;
+    min-width: 0;
+    height: auto;
+}
+
+.theme-btn {
+    background: none;
+    border: 1px solid currentColor; /* Minimalist border */
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    transition: opacity 0.2s ease;
+}
+
+.theme-btn:hover {
+    opacity: 0.7;
+}
+
+/* DESKTOP LAYOUT (Min-width: 900px) */
+@media (min-width: 900px) {
+	.main-section {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 64px;
+	}
+
+	.left-column {
+		position: sticky;
+		top: var(--spacing-outer);
+		height: calc(100vh - (var(--spacing-outer) * 2));
+		flex: 0 0 content; /* Fixed sidebar width */
+		display: flex;
+		flex-direction: column;
+	}
+
+	.right-column {
+		flex: 1;
+		min-width: 0; /* Prevents flex items from overflowing */
+	}
+
+	.nav-bar {
+		height: 100%;
+		margin-bottom: 0;
+		justify-content: space-between;
+	}
+
+	.about {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 4rem;
+	}
+
+	.about h2:first-of-type {
+		flex: 3; /* Allocates 60% width to the intro text */
+		/*max-width: 30ch;*/
+	}
+
+	.about h2:last-of-type {
+		flex: 2; /* Allocates 40% width to the university info */
+		max-width: 20ch;
+	}
+
+	.project-card {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.reverse {
+		flex-direction: row-reverse;
+	}
+
+	.project-image {
+		flex: 1.5; /* Image takes up more space */
+	}
+
+	.project-description {
+		flex: 1;
+	}
 }

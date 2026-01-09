@@ -15,26 +15,38 @@
 	</head>
 	<body>
 		<div class="main-section">
-			<div class="left-column">
+			<header class="left-column">
 				<h1 class="title">
-					<a href="index.html"
-						>functial.
-						<div class="logo"></div>
-						<img
+					<a href="index.html">
+						functial.
+						<svg
 							class="logo"
-							src="assets/images/Logo.svg"
-							alt="Functial Logo"
-							width="160px"
-							height="auto"
-						/>
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 917.7 764.75"
+							aria-label="Functial Logo"
+						>
+							<path
+								fill="currentColor"
+								d="M152.95,611.8H0V152.95h152.95v458.85ZM621.08,436.45h0c-29.87-29.87-29.87-78.29,0-108.15h0c29.87-29.87,29.87-78.29,0-108.15h0c-29.87-29.87-78.29-29.87-108.15,0h0c-29.87,29.87-78.29,29.87-108.15,0h0c-29.87-29.87-78.29-29.87-108.15,0h0c-29.87,29.87-29.87,78.29,0,108.15h0c29.87,29.87,29.87,78.29,0,108.15h0c-29.87,29.87-29.87,78.29,0,108.15h0c29.87,29.87,78.29,29.87,108.15,0h0c29.87-29.87,78.29-29.87,108.15,0h0c29.87,29.87,78.29,29.87,108.15,0h0c29.87-29.87,29.87-78.29,0-108.15ZM152.95,0h0S0,0,0,0v152.95h0c84.47,0,152.95-68.48,152.95-152.95ZM305.9,0h0S152.95,0,152.95,0v152.95h0c84.47,0,152.95-68.48,152.95-152.95ZM0,611.8h0v152.95h152.95c0-84.47-68.48-152.95-152.95-152.95ZM152.95,611.8h0v152.95h152.95c0-84.47-68.48-152.95-152.95-152.95ZM764.75,611.8h152.95s0-458.85,0-458.85h-152.95s0,458.85,0,458.85ZM917.7,152.95h0V0s-152.95,0-152.95,0h0c0,84.47,68.48,152.95,152.95,152.95ZM764.75,152.95h0V0s-152.95,0-152.95,0h0c0,84.47,68.48,152.95,152.95,152.95ZM764.75,764.75h0s152.95,0,152.95,0v-152.95s0,0,0,0c-84.47,0-152.95,68.48-152.95,152.95ZM611.8,764.75h0s152.95,0,152.95,0v-152.95s0,0,0,0c-84.47,0-152.95,68.48-152.95,152.95Z"
+							/>
+						</svg>
 					</a>
 				</h1>
 
-				<p>Website in progress!</p>
+				<p class="status">Website in progress!</p>
+
+				<button
+					id="theme-toggle"
+					class="theme-btn"
+					aria-label="Toggle Theme"
+				>
+					● Switch Theme
+				</button>
+
 				<div class="nav-bar">
-					<nav>
+					<nav class="primary-nav">
 						<ul>
-							<li><a href="projects/">Projects</a></li>
+							<li><a href="#projects">Projects</a></li>
 							<li>
 								<a href="https://functial.github.io/quartz/"
 									>Knowledge Base</a
@@ -48,11 +60,11 @@
 							</li>
 						</ul>
 					</nav>
-					<nav>
+					<nav class="social-nav">
 						<ul>
 							<li>
 								<a
-									href="assets/teerathad-udomjitwiwat-resume.pdf"
+									href="https://functial.in.th/assets/teerathad-udomjitwiwat-resume.pdf"
 									>Resume 🡥</a
 								>
 							</li>
@@ -75,8 +87,9 @@
 						</ul>
 					</nav>
 				</div>
-			</div>
-			<div class="right-column">
+			</header>
+
+			<main class="right-column">
 				<div class="about">
 					<h2>
 						Hi! I'm Teerathad, a design generalist with an interest
@@ -85,34 +98,29 @@
 					</h2>
 					<h2>Currently studying Creative Technology @MUIC</h2>
 				</div>
-				<!--<p>Self-Directed Internet Learner.</p>-->
-				<!--<p>🕹️ Currently playing: Megabonk</p>-->
 
-				<div class="projects">
+				<div id="projects">
 					<h2>Projects</h2>
 					<div class="project-card">
 						<img
 							class="project-image"
-							src="https://placehold.co/960x540"
-							alt="project: untitled"
+							src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_webp/274aca199214095.664de275b136b.png"
+							alt="Project: Readalot"
 						/>
 						<div class="project-description">
-							<h3><a href="">Project Name</a></h3>
+							<h3>
+								<a href="projects/readalot.html"
+									>Readalot | Book and Progress Tracker</a
+								>
+							</h3>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in
-								reprehenderit in voluptate velit esse cillum
-								dolore eu fugiat nulla pariatur. Excepteur sint
-								occaecat cupidatat non proident, sunt in culpa
-								qui officia deserunt mollit anim id est laborum.
+								An app for tracking books and reading progress,
+								so you don’t buy the same book twice or forget
+								where you stopped reading.
 							</p>
 						</div>
 					</div>
-					<div class="project-card">
+					<!--<div class="project-card reverse">
 						<img
 							class="project-image"
 							src="https://placehold.co/960x540"
@@ -123,19 +131,14 @@
 							<p>
 								Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in
-								reprehenderit in voluptate velit esse cillum
-								dolore eu fugiat nulla pariatur. Excepteur sint
-								occaecat cupidatat non proident, sunt in culpa
-								qui officia deserunt mollit anim id est laborum.
+								incididunt ut labore et dolore magna aliqua.
 							</p>
 						</div>
-					</div>
+					</div>-->
 				</div>
-			</div>
+			</main>
 		</div>
+
+		<script src="index.js"></script>
 	</body>
 </html>
