@@ -1,35 +1,71 @@
-body {
-    font-family: "Roboto Mono", Sarabun, Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    padding: 0 10%;
-
+:root {
+    color-scheme: dark;
+    --light-color: #ebebec;
+    --dark-color: #161618;
+    --accent-color: #ff6314;
 }
 
-.title *{
-	font-family: "Roboto Mono";
-	color: #ebebec;
-	text-decoration: none;
+body {
+    font-family: "Roboto Mono", Sarabun, Arial, sans-serif;
+    font-size: 1rem;
+    margin: 32px;
+    background-color: light-dark(var(--light-color), var(--dark-color));
+    color: light-dark(var(--dark-color), var(--light-color));
+}
+
+.title {
+    margin-top: 0;
+}
+
+.title * {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.2em;
+    margin-top: 0;
+    /*font-family: "Roboto Mono";*/
+    color: light-dark(var(--dark-color), var(--light-color));
+    text-decoration: none;
+}
+
+.logo {
+    fill: red;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 32px;
+    height: calc(100vh - 64px);
+    /*justify-content: flex-start;
+	height: max-content;*/
+}
+
+.left-column > p {
+    margin-top: 0;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 }
 
 nav * {
-	font-family: "Roboto Mono";
-	text-decoration: none;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	text-wrap: nowrap;
+    font-family: "Roboto Mono";
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-wrap: nowrap;
 }
 
 a {
-    color: #ff6314;
+    color: var(--accent-color);
 }
 
-body {
-    font-size: 1rem;
-    margin: 30px;
-    background-color: #161618ff;
-    color: #ebebec;
+a:hover {
+    opacity: 0.8;
 }
 
 textarea {
@@ -43,12 +79,27 @@ textarea {
 }
 
 .main-section {
-	display: flex;
-	justify-content: space-between;
-	gap: 64px;
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 2em;
+    /*flex-wrap: wrap;*/
 }
 
 h2 {
-	margin: 0;
-	font-size: 2rem;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+p {
+    width: clamp(45ch, 50%, 75ch);
 }
