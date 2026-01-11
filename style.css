@@ -83,12 +83,12 @@ img {
 }
 
 .logo {
-    display: block;
-    margin-top: 0.5rem;
-    width: 160px;
-    height: auto;
-    /* This makes the SVG take the color of the parent text */
-    fill: currentColor;
+	display: block;
+	margin-top: 0.5rem;
+	width: 160px;
+	height: auto;
+	/* This makes the SVG take the color of the parent text */
+	fill: currentColor;
 }
 
 .status {
@@ -145,27 +145,32 @@ nav ul {
 
 .flex img {
 	flex: 1;
-    width: 100%;
-    object-fit: cover;
-    min-width: 0;
-    height: auto;
+	width: 100%;
+	object-fit: cover;
+	min-width: 0;
+	height: auto;
 }
 
 .theme-btn {
-    background: none;
-    border: 1px solid currentColor; /* Minimalist border */
-    color: inherit;
-    font-family: inherit;
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    margin-bottom: 2rem;
-    width: fit-content;
-    transition: opacity 0.2s ease;
+	background: none;
+	border: 1px solid currentColor; /* Minimalist border */
+	color: inherit;
+	font-family: inherit;
+	font-size: 0.9rem;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	margin-bottom: 2rem;
+	width: fit-content;
+	transition: opacity 0.2s ease;
 }
 
 .theme-btn:hover {
-    opacity: 0.7;
+	opacity: 0.7;
+}
+
+.kirby {
+	image-rendering: pixelated;
+	margin-bottom: 1em;
 }
 
 /* DESKTOP LAYOUT (Min-width: 900px) */
@@ -211,6 +216,10 @@ nav ul {
 	.about h2:last-of-type {
 		flex: 2; /* Allocates 40% width to the university info */
 		max-width: 20ch;
+	}
+
+	.about h2 a {
+		color: inherit;
 	}
 
 	.project-card {
