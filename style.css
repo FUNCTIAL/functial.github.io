@@ -1,6 +1,6 @@
 /* Root & Global Resets */
 :root {
-	color-scheme: light dark;
+	color-scheme: light;
 	--light-color: #ebebec;
 	--dark-color: #161618;
 	--accent-color: #ff4314;
