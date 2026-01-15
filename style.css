@@ -173,6 +173,22 @@ nav ul {
 	margin-bottom: 1em;
 }
 
+.gallery {
+	display: flex;
+	align-items: stretch;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	flex: 1 1 auto;
+	margin-bottom: 4rem;
+
+}
+
+.gallery .project-image {
+    aspect-ratio: auto;
+    width: auto;
+    object-fit: contain; /* Optional: ensures the whole image is visible */
+}
+
 /* DESKTOP LAYOUT (Min-width: 900px) */
 @media (min-width: 900px) {
 	.main-section {
